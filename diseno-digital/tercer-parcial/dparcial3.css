@@ -1,0 +1,111 @@
+@import url('../../estilos.css');
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef2f6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: stretch;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.imagen-lado {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafbfc;
+    border-right: 1px solid #eef2f6;
+    overflow: hidden;
+}
+
+.imagen-lado img {
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    min-height: 200px;
+}
+
+.tarjeta .contenido {
+    width: 55%;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* For cards with no images (No lo hice) */
+.tarjeta.sin-imagen .contenido {
+    width: 100%;
+    text-align: center;
+}
+
+.btn-descarga, .btn-visor {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+}
+
+.btn-descarga {
+    background-color: rgb(15, 134, 182);
+    color: white;
+    margin-right: 12px;
+}
+
+.btn-descarga:hover {
+    background-color: rgb(18, 63, 119);
+    transform: translateY(-2px);
+}
+
+.btn-visor {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.btn-visor:hover {
+    background-color: #1b5e20;
+    transform: translateY(-2px);
+}
+
+.descargas-container {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .tarjeta {
+        flex-direction: column;
+    }
+    .imagen-lado {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eef2f6;
+    }
+    .tarjeta .contenido {
+        width: 100%;
+        padding: 25px;
+    }
+}
